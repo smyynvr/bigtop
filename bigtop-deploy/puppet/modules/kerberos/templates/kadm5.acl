@@ -18,4 +18,6 @@
 # One common way to set up Kerberos administration is to allow any principal 
 # ending in /admin  is given full administrative rights.
 # To enable this, uncomment the following line:
-*/admin *
+*/admin@KRB.TEST.COM *
+*/rockylinux@KRB.TEST.COM *
+*/rockylinux2@KRB.TEST.COM *
