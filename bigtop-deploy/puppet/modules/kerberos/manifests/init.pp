@@ -24,7 +24,7 @@ class kerberos {
   }
 
   class krb_site ($domain = inline_template('<%= @domain %>'),
-      $realm = inline_template('<%= @domain.upcase %>'),
+      $realm = inline_template('<%= @domain %>'),
       $kdc_server = 'localhost',
       $kdc_port = '88',
       $admin_port = 749,
@@ -104,7 +104,7 @@ class kerberos {
 
     exec { "kdb5_util":
       path => $exec_path,
-      command => "rm -f /etc/kadm5.keytab ; kdb5_util -P cthulhu -r ${realm} create -s && kadmin.local -q 'cpw -pw secure kadmin/admin'",
+      command => "rm -f /etc/kadm5.keytab ; kdb5_util -P cthulhu -r KRB.TEST.COM create -s && kadmin.local -q 'cpw -pw secure kadmin/admin'",
       
       creates => "${kdc_etc_path}/stash",
 
