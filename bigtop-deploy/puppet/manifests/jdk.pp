@@ -45,7 +45,7 @@ class jdk {
       package { 'jdk':
         name => 'java-1.8.0-openjdk-devel',
         ensure => present,
-        noop => true,
+        noop => $jdk_preinstalled,
       }
     }
     /OpenSuSE/: {
