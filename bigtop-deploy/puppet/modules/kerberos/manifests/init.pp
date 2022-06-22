@@ -68,9 +68,9 @@ class kerberos {
     }
 
     # Required for SPNEGO
-     @principal { "HTTP": 
+     # @principal { "HTTP": 
 
-    }
+    #}
   }
 
   class kdc inherits kerberos::krb_site {
