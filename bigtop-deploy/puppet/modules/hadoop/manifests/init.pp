@@ -123,7 +123,7 @@ class hadoop ($hadoop_security_authentication = "simple",
         require => [Package["hadoop"]],
     }
 
-     #package { "hadoop":
+     # package { "hadoop":
       # ensure => latest,
      # require => Package["jdk"],
     #}
