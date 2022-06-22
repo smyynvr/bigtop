@@ -68,9 +68,9 @@ class kerberos {
     }
 
     # Required for SPNEGO
-    # @principal { "HTTP": 
+     @principal { "HTTP": 
 
-   # }
+    }
   }
 
   class kdc inherits kerberos::krb_site {
@@ -104,7 +104,7 @@ class kerberos {
 
     exec { "kdb5_util":
       path => $exec_path,
-      command => "rm -f /etc/kadm5.keytab ; kdb5_util -P cthulhu -r ${realm} create -s && kadmin.local -q 'cpw -pw secure kadmin/admin'",
+      command => "rm -f /etc/kadm5.keytab ; kdb5_util -P cthulhu -r KRB.TEST.COM create -s && kadmin.local -q 'cpw -pw secure kadmin/admin'",
       
       creates => "${kdc_etc_path}/stash",
 
